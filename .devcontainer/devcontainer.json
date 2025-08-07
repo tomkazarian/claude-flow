@@ -1,0 +1,14 @@
+{
+  "name": "Claude-Flow Alpha",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:18",
+
+  // Expose your API keys to the container:
+  "remoteEnv": {
+    "ANTHROPIC_API_KEY": "${{ codespaces.secret.ANTHROPIC_API_KEY }}",
+    "OPENAI_API_KEY":      "${{ codespaces.secret.OPENAI_API_KEY }}"
+  },
+
+  // any other existing settings…
+  "forwardPorts": [3000],
+  "postCreateCommand": "npm install -g @anthropic-ai/claude-code"
+}
